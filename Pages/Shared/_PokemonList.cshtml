@@ -1,0 +1,13 @@
+@model IndexModel
+
+@foreach (var pokemon in Model.PokemonResults)
+{
+    var id = pokemon.Url.Split('/').Where(part => !string.IsNullOrEmpty(part)).Last();
+    <div class="card">
+    <a href="/details/@id">
+        <div class="card-body">
+            <h5 class="card-title">@pokemon.Name</h5>
+            </div>
+        </a>
+    </div>
+}
